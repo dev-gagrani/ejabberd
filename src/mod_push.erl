@@ -436,6 +436,7 @@ offline_message({offlined,
     case lookup_sessions(LUser, LServer) of
 	{ok, [_|_] = Clients} ->
 	    ?DEBUG("Notifying ~ts@~ts of offline message", [LUser, LServer]),
+	    ?INFO_MSG("Notifying ~ts@~ts of offline message", [LUser, LServer]),
 	    notify(LUser, LServer, Clients, Pkt, recv);
 	_ ->
 	    ok
